@@ -1,0 +1,1105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>English Revival · 90 天会议听说复苏计划</title>
+<style>
+:root{
+  --paper:#f4f0e7;
+  --card:#fffdf7;
+  --ink:#17130f;
+  --muted:#7a7166;
+  --line:#e3dbcd;
+  --red:#d94a2b;
+  --green:#1f6f5c;
+  --blue:#3a5a8c;
+  --amber:#c98a2e;
+  --shadow:0 1px 2px rgba(23,19,15,.04), 0 8px 24px rgba(23,19,15,.05);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:15px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:96px;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(720px 360px at 12% -6%, rgba(217,74,43,.06), transparent 60%),
+    radial-gradient(620px 320px at 92% 4%, rgba(31,111,92,.06), transparent 60%);
+}
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* ---------- header ---------- */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0 18px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+  width:38px;height:38px;border-radius:11px;background:var(--ink);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:"Times New Roman",Georgia,"Songti SC",serif;font-size:15px;letter-spacing:.5px;
+  box-shadow:0 4px 10px rgba(23,19,15,.18);
+}
+.brand b{display:block;font-size:16px;letter-spacing:.2px;font-family:"Times New Roman",Georgia,"Songti SC",serif}
+.brand small{display:block;color:var(--muted);font-size:11.5px;letter-spacing:.4px;margin-top:-1px}
+.hud{display:flex;gap:22px;text-align:right}
+.hud div b{display:block;font-size:20px;font-variant-numeric:tabular-nums;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.hud div span{font-size:11px;color:var(--muted);letter-spacing:.3px}
+.streak-hot b{color:var(--red)}
+
+/* ---------- tabs ---------- */
+nav.tabs{
+  position:sticky;top:0;z-index:20;
+  display:flex;gap:4px;overflow-x:auto;
+  padding:8px 0;margin-bottom:22px;
+  background:rgba(244,240,231,.88);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--line);
+  scrollbar-width:none;
+}
+nav.tabs::-webkit-scrollbar{display:none}
+.tab{
+  appearance:none;border:0;background:transparent;cursor:pointer;
+  font:inherit;font-size:14px;color:var(--muted);
+  padding:8px 14px;border-radius:9px;white-space:nowrap;
+  transition:.18s;
+}
+.tab:hover{color:var(--ink);background:rgba(23,19,15,.045)}
+.tab.active{color:var(--ink);background:var(--ink);color:#fffdf7}
+.tab .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--red);margin-left:6px;vertical-align:1px}
+
+/* ---------- shared ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.panel{display:none;animation:fade .28s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h1,h2,h3{font-family:"Times New Roman",Georgia,"Songti SC",serif;font-weight:600;letter-spacing:.1px}
+.btn{
+  appearance:none;cursor:pointer;font:inherit;font-size:13.5px;
+  padding:9px 16px;border-radius:10px;border:1px solid var(--line);
+  background:#fff;color:var(--ink);transition:.16s;white-space:nowrap;
+}
+.btn:hover{border-color:#c9c0ae;transform:translateY(-1px)}
+.btn.primary{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 6px 16px rgba(217,74,43,.22)}
+.btn.primary:hover{background:#c44125;border-color:#c44125}
+.btn.ghost{background:transparent}
+.btn.tiny{padding:5px 10px;font-size:12px;border-radius:8px}
+.tag{
+  display:inline-block;font-size:11px;letter-spacing:.5px;padding:2px 8px;border-radius:20px;
+  border:1px solid currentColor;opacity:.9;
+}
+.tag.input{color:var(--blue)}
+.tag.output{color:var(--red)}
+.tag.review{color:var(--green)}
+.tag.cat{color:var(--muted);border-color:var(--line)}
+
+/* ---------- today ---------- */
+.hero{padding:26px 26px 22px;position:relative;overflow:hidden}
+.hero::after{
+  content:"A";position:absolute;right:18px;top:-34px;
+  font-family:"Times New Roman",Georgia,serif;font-size:190px;line-height:1;
+  color:rgba(217,74,43,.055);pointer-events:none;
+}
+.hero-kicker{font-size:11.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--red);font-weight:600}
+.hero h1{font-size:32px;line-height:1.25;margin:8px 0 6px;position:relative;z-index:1}
+.hero-sub{margin:0;color:var(--muted);font-size:14px;max-width:600px}
+.energy-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:22px 0 16px}
+.energy-label{font-size:12.5px;color:var(--muted);letter-spacing:.3px}
+.seg{display:inline-flex;background:#efe9dd;border-radius:11px;padding:3px;gap:3px}
+.seg button{
+  appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:12.5px;
+  color:var(--muted);padding:7px 13px;border-radius:8px;transition:.16s;white-space:nowrap;
+}
+.seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(23,19,15,.12)}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+.today-head{display:flex;align-items:baseline;justify-content:space-between;margin:30px 2px 12px}
+.today-head h2{font-size:19px;margin:0}
+.today-head span{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+.task-list{display:grid;gap:11px}
+.task{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:14px;
+  border-left:3px solid var(--line);transition:.18s;box-shadow:var(--shadow);
+}
+.task.input{border-left-color:var(--blue)}
+.task.output{border-left-color:var(--red)}
+.task.review{border-left-color:var(--green)}
+.task:hover{transform:translateY(-1px)}
+.task.done{opacity:.5;background:#fbf9f3}
+.task.done h3{text-decoration:line-through;text-decoration-thickness:1px}
+.task input[type=checkbox]{
+  margin-top:3px;width:19px;height:19px;accent-color:var(--red);cursor:pointer;flex:none;
+}
+.task-body{flex:1;min-width:0}
+.task-meta{display:flex;gap:8px;align-items:center;font-size:11.5px;color:var(--muted);margin-bottom:4px}
+.task h3{font-size:16px;margin:0 0 4px;font-weight:600;line-height:1.4}
+.task p{margin:0;font-size:13px;color:var(--muted);line-height:1.65}
+.task-links{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.task-links a{
+  font-size:12px;color:var(--blue);text-decoration:none;border-bottom:1px dashed rgba(58,90,140,.4);padding-bottom:1px;
+}
+.task-links a:hover{color:var(--red);border-color:rgba(217,74,43,.4)}
+.task-links button{
+  appearance:none;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--muted);
+  font:inherit;font-size:12px;padding:4px 10px;border-radius:7px;transition:.15s;
+}
+.task-links button:hover{color:var(--red);border-color:rgba(217,74,43,.35)}
+
+.minimum{
+  margin-top:18px;padding:18px 20px;border:1px dashed #cfc5b4;border-radius:14px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  background:rgba(255,253,247,.5);
+}
+.minimum div h3{font-size:14.5px;margin:0 0 2px}
+.minimum div p{margin:0;font-size:12.5px;color:var(--muted)}
+
+/* ---------- roadmap ---------- */
+.roadmap-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.roadmap-head h2{font-size:24px;margin:0}
+.roadmap-head p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.progress-wrap{min-width:200px;flex:1;max-width:300px}
+.progress-wrap .bar{height:7px;background:#e7e0d3;border-radius:20px;overflow:hidden}
+.progress-wrap .bar i{display:block;height:100%;width:0;background:var(--green);border-radius:20px;transition:width .5s}
+.progress-wrap small{display:block;text-align:right;font-size:11.5px;color:var(--muted);margin-top:5px}
+
+.phase{margin-bottom:30px}
+.phase-head{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;padding-left:2px}
+.phase-head .pi{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#fff;background:var(--ink);padding:3px 8px;border-radius:6px;letter-spacing:.5px}
+.phase-head h3{font-size:18px;margin:0}
+.phase-head span{font-size:12px;color:var(--muted)}
+.weeks{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.week{padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.week.done{background:#f4f8f5;border-color:#cfe3d9}
+.week header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.week .wn{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:1px 6px}
+.week h4{margin:0;font-size:14.5px;font-weight:600;flex:1;font-family:inherit}
+.week header input{width:16px;height:16px;accent-color:var(--green);cursor:pointer}
+.week ul{margin:0;padding-left:16px;color:var(--muted);font-size:12.5px;line-height:1.85}
+.week ul li::marker{color:#c9c0ae}
+.week.done ul{color:#6d8a7f}
+
+/* ---------- materials ---------- */
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}
+.chip{
+  appearance:none;cursor:pointer;font:inherit;font-size:12.5px;padding:6px 13px;border-radius:20px;
+  border:1px solid var(--line);background:#fff;color:var(--muted);transition:.15s;
+}
+.chip:hover{border-color:#c9c0ae;color:var(--ink)}
+.chip.on{background:var(--ink);color:#fffdf7;border-color:var(--ink)}
+.mat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mat{padding:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;gap:7px;box-shadow:var(--shadow);transition:.18s}
+.mat:hover{transform:translateY(-2px)}
+.mat.used{opacity:.55}
+.mat .top-row{display:flex;justify-content:space-between;align-items:center}
+.mat h4{margin:0;font-size:14.5px;font-weight:600;line-height:1.35}
+.mat p{margin:0;font-size:12.5px;color:var(--muted);flex:1;line-height:1.6}
+.mat .meta{font-size:11.5px;color:#a89e90;font-variant-numeric:tabular-nums}
+.mat .actions{display:flex;justify-content:space-between;align-items:center;margin-top:2px}
+.mat a{font-size:12px;color:var(--blue);text-decoration:none}
+.mat a:hover{color:var(--red)}
+.mat .used-btn{
+  appearance:none;cursor:pointer;font:inherit;font-size:11.5px;padding:3px 9px;border-radius:6px;
+  border:1px solid var(--line);background:#fff;color:var(--muted);
+}
+.mat .used-btn.on{background:var(--green);border-color:var(--green);color:#fff}
+
+/* ---------- phrases ---------- */
+.flash{
+  background:var(--ink);color:#fffdf7;border-radius:18px;padding:30px 28px;margin-bottom:26px;
+  min-height:150px;display:flex;flex-direction:column;justify-content:center;position:relative;
+  box-shadow:0 14px 34px rgba(23,19,15,.18);
+}
+.flash .fcat{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:#c9b9a2;margin-bottom:8px}
+.flash .fen{font-family:"Times New Roman",Georgia,serif;font-size:26px;line-height:1.32;letter-spacing:.2px}
+.flash .fzh{font-size:13.5px;color:#b9ad9c;margin-top:10px;min-height:22px;transition:.2s}
+.flash .fact{display:flex;gap:9px;margin-top:18px;flex-wrap:wrap}
+.flash .fact button{
+  appearance:none;cursor:pointer;font:inherit;font-size:12px;padding:6px 13px;border-radius:8px;
+  border:1px solid rgba(255,253,247,.28);background:transparent;color:#fffdf7;transition:.15s;
+}
+.flash .fact button:hover{background:rgba(255,253,247,.12)}
+.flash .fact .solid{background:#fffdf7;color:var(--ink);border-color:#fffdf7}
+.flash .fact .solid:hover{background:#efe9dd}
+
+.ph-list{display:grid;gap:8px}
+.ph{display:flex;gap:14px;align-items:flex-start;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-radius:11px}
+.ph.mastered{opacity:.45;background:#f8f7f1}
+.ph .ph-main{flex:1;min-width:0}
+.ph .en{font-size:14.5px;font-weight:600;line-height:1.45;color:var(--ink)}
+.ph .zh{font-size:12.5px;color:var(--muted);margin-top:1px}
+.ph .ph-act{display:flex;gap:6px;flex:none;align-items:center}
+.ph .ph-act button{appearance:none;cursor:pointer;font:inherit;font-size:11px;padding:4px 9px;border-radius:6px;border:1px solid var(--line);background:#fff;color:var(--muted)}
+.ph .ph-act button:hover{color:var(--red);border-color:rgba(217,74,43,.35)}
+.ph .ph-act .ok.on{background:var(--green);border-color:var(--green);color:#fff}
+.ph .tag{flex:none;margin-top:2px}
+
+/* ---------- stats ---------- */
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}
+.stat{padding:18px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:28px;font-variant-numeric:tabular-nums;font-family:"Times New Roman",Georgia,serif;line-height:1.1}
+.stat span{font-size:11.5px;color:var(--muted)}
+.heat-card{padding:22px;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.heat-card h3{font-size:16px;margin:0 0 4px}
+.heat-card p{font-size:12px;color:var(--muted);margin:0 0 16px}
+.heat{display:grid;grid-template-rows:repeat(7,14px);grid-auto-flow:column;grid-auto-columns:14px;gap:4px;justify-content:start}
+.heat i{background:#e9e3d7;border-radius:3px;display:block}
+.heat i.l1{background:#f0c6b9}
+.heat i.l2{background:#e0876c}
+.heat i.l3{background:var(--red)}
+.heat i.future{background:transparent;border:1px dashed #e3dbcd}
+.heat-legend{display:flex;gap:6px;align-items:center;font-size:11px;color:var(--muted);margin-top:14px}
+.heat-legend i{width:11px;height:11px;border-radius:2px;display:inline-block}
+.danger{margin-top:22px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.danger button{appearance:none;cursor:pointer;font:inherit;font-size:12px;padding:7px 13px;border-radius:8px;border:1px solid #e3c9c1;background:#fff;color:#b0462c}
+.danger button:hover{background:#fbefe9}
+
+/* ---------- timer ---------- */
+.timer-bar{
+  position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(0);
+  z-index:60;display:flex;align-items:center;gap:14px;
+  background:var(--ink);color:#fffdf7;padding:12px 16px 12px 20px;border-radius:14px;
+  box-shadow:0 16px 40px rgba(23,19,15,.3);transition:transform .28s ease, opacity .28s;
+  max-width:calc(100vw - 32px);
+}
+.timer-bar.hidden{transform:translateX(-50%) translateY(140%);opacity:0;pointer-events:none}
+.timer-bar .t-name{font-size:12px;color:#b9ad9c;max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.timer-bar .t-time{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:20px;font-variant-numeric:tabular-nums;letter-spacing:.5px;min-width:64px}
+.timer-bar button{appearance:none;cursor:pointer;font:inherit;font-size:11.5px;padding:6px 11px;border-radius:7px;border:1px solid rgba(255,253,247,.25);background:transparent;color:#fffdf7;white-space:nowrap}
+.timer-bar button:hover{background:rgba(255,253,247,.12)}
+.timer-bar button.solid{background:#fffdf7;color:var(--ink);border-color:#fffdf7}
+
+/* ---------- toast ---------- */
+#toast{
+  position:fixed;left:50%;top:18px;transform:translate(-50%,-140%);
+  background:var(--ink);color:#fffdf7;padding:11px 20px;border-radius:10px;font-size:13px;
+  z-index:80;transition:transform .3s cubic-bezier(.2,.9,.3,1.2);box-shadow:0 10px 26px rgba(0,0,0,.18);
+  max-width:calc(100vw - 40px);text-align:center;
+}
+#toast.show{transform:translate(-50%,0)}
+
+/* ---------- responsive ---------- */
+@media (max-width:880px){
+  .mat-grid{grid-template-columns:repeat(2,1fr)}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .weeks{grid-template-columns:1fr}
+  .hero h1{font-size:26px}
+  .flash .fen{font-size:22px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 14px}
+  .hud{gap:14px}
+  .hud div b{font-size:17px}
+  .brand small{display:none}
+  .hero{padding:20px 18px}
+  .hero h1{font-size:23px}
+  .hero::after{font-size:130px;top:-20px}
+  .mat-grid{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .task{padding:14px}
+  .ph{flex-wrap:wrap}
+  .ph .tag{order:-1}
+  .minimum{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="logo">EN</div>
+      <div>
+        <b>English Revival</b>
+        <small>90 天 · 会议听说复苏计划</small>
+      </div>
+    </div>
+    <div class="hud">
+      <div class="streak-hot"><b id="hudStreak">0</b><span>连续天数</span></div>
+      <div><b id="hudMin">0</b><span>今日分钟</span></div>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="today">今天</button>
+    <button class="tab" data-tab="roadmap">12 周路线</button>
+    <button class="tab" data-tab="materials">素材库</button>
+    <button class="tab" data-tab="phrases">会议弹药库</button>
+    <button class="tab" data-tab="stats">打卡记录</button>
+  </nav>
+
+  <main>
+    <!-- TODAY -->
+    <section class="panel active" id="panel-today">
+      <div class="card hero">
+        <div class="hero-kicker" id="heroKicker">第 1 周</div>
+        <h1 id="heroTitle">今天只做清单上的事</h1>
+        <p class="hero-sub" id="heroSub">选一个电量，点开始，做完打勾。其他都不用管。</p>
+        <div class="energy-row">
+          <span class="energy-label">今天什么电量</span>
+          <div class="seg">
+            <button data-energy="low">🪫 低 · 15′</button>
+            <button data-energy="normal">🔋 中 · 35′</button>
+            <button data-energy="full">⚡ 满 · 70′</button>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <button class="btn primary" data-action="start-first">开始第一件</button>
+          <button class="btn ghost" data-action="shuffle">换一批</button>
+        </div>
+      </div>
+
+      <div class="today-head">
+        <h2>今天的清单</h2>
+        <span id="todayDone">0 / 0</span>
+      </div>
+      <div class="task-list" id="taskList"></div>
+
+      <div class="minimum">
+        <div>
+          <h3>只想躺平？这里有下限</h3>
+          <p>5 分钟影子跟读，跟着念就行。做了就算没断，链子保住了。</p>
+        </div>
+        <button class="btn" data-action="minimum">完成 5 分钟兜底</button>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="panel" id="panel-roadmap">
+      <div class="roadmap-head">
+        <div>
+          <h2>12 周路线</h2>
+          <p>不是重新学英语，是把仓库里的东西搬出来、擦干净、用起来。</p>
+        </div>
+        <div class="progress-wrap">
+          <div class="bar"><i id="weekBar"></i></div>
+          <small id="weekBarText">0 / 12 周</small>
+        </div>
+      </div>
+      <div id="phases"></div>
+    </section>
+
+    <!-- MATERIALS -->
+    <section class="panel" id="panel-materials">
+      <div class="roadmap-head">
+        <div>
+          <h2>素材库</h2>
+          <p>全部是现成链接，点开就能练。用过就点「用过」，不用重复找。</p>
+        </div>
+      </div>
+      <div class="chips" id="matChips"></div>
+      <div class="mat-grid" id="matGrid"></div>
+    </section>
+
+    <!-- PHRASES -->
+    <section class="panel" id="panel-phrases">
+      <div class="roadmap-head">
+        <div>
+          <h2>会议弹药库</h2>
+          <p>听懂只是及格，能在会上接上话才算数。先背这 47 句。</p>
+        </div>
+      </div>
+      <div class="flash" id="flash"></div>
+      <div class="chips" id="phChips"></div>
+      <div class="ph-list" id="phList"></div>
+    </section>
+
+    <!-- STATS -->
+    <section class="panel" id="panel-stats">
+      <div class="roadmap-head">
+        <div>
+          <h2>打卡记录</h2>
+          <p>数据只存在你这台电脑的浏览器里，不用登录，也不会丢到别人手里。</p>
+        </div>
+      </div>
+      <div class="stat-grid" id="statGrid"></div>
+      <div class="heat-card">
+        <h3>最近 8 周</h3>
+        <p>一格一天。深一点代表当天练得久，空格就是断了。</p>
+        <div class="heat" id="heat"></div>
+        <div class="heat-legend">
+          <span>少</span>
+          <i style="background:#e9e3d7"></i><i style="background:#f0c6b9"></i><i style="background:#e0876c"></i><i style="background:#d94a2b"></i>
+          <span>多</span>
+        </div>
+        <div class="danger">
+          <span>开始日期：<b id="startDate"></b></span>
+          <button data-action="reset">清空所有记录</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="timer-bar hidden" id="timerBar">
+  <span class="t-name" id="tName">专注</span>
+  <span class="t-time" id="tTime">00:00</span>
+  <button data-t="pause" id="tPause">暂停</button>
+  <button data-t="add">+5 分钟</button>
+  <button data-t="done" class="solid">完成</button>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* ===================== data ===================== */
+const TASKS = {
+  input: [
+    {id:"in-shadow-bbc", mins:10, title:"影子跟读 10 分钟", desc:"BBC 6 Minute English 选一段，先听两遍，再跟着说三遍。重点模仿语调，不是逐字念。", link:"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english", linkText:"BBC 6 Minute English"},
+    {id:"in-blind-hbr", mins:15, title:"无字幕盲听 15 分钟", desc:"HBR IdeaCast 听 15 分钟，只记关键词，不查词。听完用中文写 3 句大意。", link:"https://hbr.org/podcasts/ideacast", linkText:"HBR IdeaCast"},
+    {id:"in-meeting-bep", mins:15, title:"会议片段精听", desc:"Business English Pod 会议系列，选一段 3–5 分钟，逐句听写，再对文本。", link:"https://www.businessenglishpod.com", linkText:"Business English Pod"},
+    {id:"in-news-fast", mins:10, title:"新闻速听 1.25x", desc:"CNBC 短视频，1.25 倍速听两遍，抓住 5W。听不懂的先记下来，别暂停。", link:"https://www.cnbc.com/video/", linkText:"CNBC Video"},
+    {id:"in-retell", mins:12, title:"听 1 分钟，复述 1 分钟", desc:"任选一段 TED 演讲片段。听完暂停，用英文复述 60 秒并录音。", link:"https://www.ted.com/talks", linkText:"TED Talks"},
+    {id:"in-accent", mins:15, title:"口音适应训练", desc:"BBC Global News Podcast，听非英美口音的主持人。目标是听懂，不是学口音。", link:"https://www.bbc.co.uk/programmes/p02nq0gn", linkText:"Global News Podcast"},
+    {id:"in-passive", mins:10, title:"通勤泛听", desc:"把昨天的素材原速再听一遍，不暂停不查词，只抓大意。让耳朵泡着就行。"}
+  ],
+  output: [
+    {id:"out-monologue", mins:10, title:"60 秒英文自述", desc:"题目：今天最想解决的一件事。说满 60 秒，录音，回听，只改 1 个地方。"},
+    {id:"out-ai-meeting", mins:15, title:"AI 模拟会议 15 分钟", desc:"用 ChatGPT 语音，让它扮演你的同事，讨论一个项目进展。你负责汇报和回答追问。", link:"https://chatgpt.com", linkText:"ChatGPT 语音"},
+    {id:"out-minutes", mins:15, title:"写英文会议纪要", desc:"听一段会议音频，写 5 行：结论 / 待办 / 负责人 / 风险 / 下次检查点。", link:"https://otter.ai", linkText:"Otter.ai"},
+    {id:"out-impromptu", mins:10, title:"30 秒即兴回答 × 5", desc:"随便抽 5 个问题（比如「你怎么看远程办公」），每题 30 秒内开口，不许先想中文。"},
+    {id:"out-sentences", mins:10, title:"句型造句 × 5", desc:"从会议弹药库挑 5 句，各造一句跟你工作相关的句子，念出来。"},
+    {id:"out-shadow-advanced", mins:15, title:"延迟跟读", desc:"跟读时比原声慢 1 秒，不看文本。卡住就跳过，别停。"},
+    {id:"out-present", mins:15, title:"3 分钟英文陈述", desc:"讲清楚：背景 / 现状 / 建议。录音，检查有没有废话。"}
+  ],
+  review: [
+    {id:"rev-phrases", mins:5, title:"3 个表达入库", desc:"把今天遇到的 3 个表达记进复习清单，各写一句自己的话。"},
+    {id:"rev-listen", mins:5, title:"回听今天的录音", desc:"只记 1 个下次要改的点。不要全面批判自己。"},
+    {id:"rev-cards", mins:5, title:"抽 5 张会议句型卡", desc:"能脱口而出就标「已掌握」，卡住的读三遍。"}
+  ]
+};
+
+const WEEKS = [
+  {n:1, phase:1, title:"测底 + 建立最小习惯", tasks:["TED 无字幕听 5 分钟，记下理解率，作为基线","录 1 分钟英文自我介绍，存档","每天 10 分钟影子跟读，7 天不断","从会议弹药库挑 20 句抄进自己的清单"]},
+  {n:2, phase:1, title:"找回口腔肌肉", tasks:["每天影子跟读 10 分钟（BBC 6 Minute English）","每天 60 秒自述录音，题目自定","掌握「开场 / 澄清」各 5 句","周末把一周录音连听一遍，写 3 个进步"]},
+  {n:3, phase:1, title:"听力脱字幕", tasks:["HBR IdeaCast 每期听 15 分钟，不看文本","每天一次「听 1 分钟、复述 1 分钟」","写 2 篇英文会议纪要，各 5 行","掌握「争取时间 / 提问」各 5 句"]},
+  {n:4, phase:1, title:"第一次模拟会议", tasks:["ChatGPT 语音模拟 15 分钟项目同步会","会前写 5 句发言提纲，会上全部用出去","会后复盘：听不懂的地方重听","对比第 1 周基线，记录理解率变化"]},
+  {n:5, phase:2, title:"多人讨论", tasks:["听 panel discussion / roundtable 播客 20 分钟","练插话 6 句（Can I jump in here? 等）","每天给自己 3 分钟「会议发言」独白","记录 10 个多人对话高频词"]},
+  {n:6, phase:2, title:"听不懂怎么办", tasks:["练澄清与确认 10 句，每句至少用一次","听带口音素材（印度 / 欧洲口音访谈）","AI 模拟：让对方故意说快、说模糊","整理一页「救场话术」小抄"]},
+  {n:7, phase:2, title:"表达观点与分歧", tasks:["练 agree / disagree / hedge 句型 15 句","每天就一个工作话题说 2 分钟立场","数字与趋势描述练习（increase / decline / plateau）","AI 模拟：给一个有争议的方案，表达反对并给替代"]},
+  {n:8, phase:2, title:"主持会议", tasks:["学主持流程话术：开场 → 过议题 → 控时 → 收尾","完整模拟 30 分钟会议（AI 扮演 2 个角色）","写一份英文会议 agenda","复盘录音，列 3 个改点"]},
+  {n:9, phase:3, title:"行业词汇", tasks:["建 50 个行业 / 公司高频词表（Anki）","读 2 篇英文行业报告，摘 20 个表达","用新词做 3 分钟行业趋势陈述","模拟：向老板汇报一周进展"]},
+  {n:10, phase:3, title:"提速与抗压", tasks:["1.25x 速度听会议录音 / 播客","每天 5 题 30 秒即兴回答","练「被打断后重新接话」","模拟：被连续追问 5 个问题"]},
+  {n:11, phase:3, title:"全真演练", tasks:["45 分钟全英文模拟会议，全程录音","换角色再演一次","逐段复盘：听不懂 / 说不出 / 说错了","准备入职首周的自我介绍与 5 个问题"]},
+  {n:12, phase:3, title:"固化系统", tasks:["制定入职后维持方案：每周 3 次 × 30 分钟","总复盘：对比第 1 周基线","整理个人「会议小抄」一页纸","设好下一阶段 3 个目标"]}
+];
+
+const PHASES = [
+  {n:1, name:"唤醒：把英语从仓库搬出来", range:"W1–W4"},
+  {n:2, name:"会议听说专项：从听懂到接上话", range:"W5–W8"},
+  {n:3, name:"实战抗压：像上班一样开会", range:"W9–W12"}
+];
+
+const MATERIALS = [
+  {id:"m1", cat:"听力", title:"BBC 6 Minute English", why:"6 分钟一期，带文本，适合每天固定输入，难度友好。", time:"6 分钟", link:"https://www.bbc.co.uk/learningenglish/english/features/6-minute-english", linkText:"打开"},
+  {id:"m2", cat:"听力", title:"TED Talks", why:"字幕可以关，最适合影子跟读和「听 1 分钟复述 1 分钟」。", time:"10–18 分钟", link:"https://www.ted.com/talks", linkText:"打开"},
+  {id:"m3", cat:"听力", title:"HBR IdeaCast", why:"商务话题访谈，语速真实，练「无字幕抓大意」。", time:"25 分钟", link:"https://hbr.org/podcasts/ideacast", linkText:"打开"},
+  {id:"m4", cat:"听力", title:"Business English Pod", why:"专门讲会议、谈判、汇报的音频课，句型和场景直接可用。", time:"10–20 分钟", link:"https://www.businessenglishpod.com", linkText:"打开"},
+  {id:"m5", cat:"听力", title:"The Diary of a CEO", why:"长访谈，练长时间注意力；口音和语速都很真实。", time:"40+ 分钟", link:"https://www.youtube.com/@TheDiaryOfACEO", linkText:"打开"},
+  {id:"m6", cat:"听力", title:"BBC Global News Podcast", why:"各国口音都有，提前适应「非标准英语」的会议现实。", time:"30 分钟", link:"https://www.bbc.co.uk/programmes/p02nq0gn", linkText:"打开"},
+  {id:"m7", cat:"听力", title:"CNBC 短视频", why:"2–3 分钟新闻，练 1.25x 速度下抓 5W。", time:"2–3 分钟", link:"https://www.cnbc.com/video/", linkText:"打开"},
+  {id:"m8", cat:"口语", title:"ChatGPT 语音模式", why:"免费陪练。让它扮演同事 / 客户 / 老板，模拟真实会议，随时可练。", time:"15 分钟起", link:"https://chatgpt.com", linkText:"打开"},
+  {id:"m9", cat:"口语", title:"手机语音备忘录", why:"最被低估的工具。每天 60 秒自述 + 回听，进步最快。", time:"每天 3 分钟"},
+  {id:"m10", cat:"口语", title:"ELSA Speak", why:"针对发音和重音纠错，解决「说得出但别人听不清」。", time:"10 分钟", link:"https://elsaspeak.com", linkText:"打开"},
+  {id:"m11", cat:"口语", title:"italki / Cambly", why:"真人陪练，付费可选。第 8 周后值得加，用来做全真会议演练。", time:"25–45 分钟", link:"https://www.italki.com", linkText:"打开"},
+  {id:"m12", cat:"写作", title:"Otter.ai", why:"会议录音转文字，拿来精听、写纪要、查自己哪句没听懂。", time:"按需", link:"https://otter.ai", linkText:"打开"},
+  {id:"m13", cat:"写作", title:"Grammarly", why:"邮件和纪要的免费检查器，先写再改，别一开始就追求完美。", time:"按需", link:"https://www.grammarly.com", linkText:"打开"},
+  {id:"m14", cat:"词汇", title:"Anki", why:"间隔重复，建自己的会议词库。只加「会上真听过」的词。", time:"每天 10 分钟", link:"https://apps.ankiweb.net", linkText:"打开"},
+  {id:"m15", cat:"词汇", title:"本站会议弹药库", why:"47 句高频会议表达，按场景分类，抽卡练习。", time:"每天 5 分钟", goto:"phrases", linkText:"去抽取"}
+];
+
+const PHRASES = [
+  {cat:"开场", en:"Shall we get started?", zh:"我们开始吧？"},
+  {cat:"开场", en:"Thanks everyone for joining.", zh:"感谢大家参加。"},
+  {cat:"开场", en:"Today we'll cover three things.", zh:"今天讲三件事。"},
+  {cat:"开场", en:"Let's kick off with the first item.", zh:"从第一个议题开始。"},
+  {cat:"开场", en:"We're running short on time, so let's move on.", zh:"时间不多了，进入下一项。"},
+  {cat:"开场", en:"Let's circle back to that later.", zh:"这个待会儿再回来讨论。"},
+  {cat:"开场", en:"To wrap up, we've agreed on three actions.", zh:"总结一下，我们达成三项行动。"},
+
+  {cat:"澄清", en:"Sorry, could you say that again?", zh:"能再说一遍吗？"},
+  {cat:"澄清", en:"Just to make sure I've got it right—you're saying that...?", zh:"确认一下，你的意思是……？"},
+  {cat:"澄清", en:"Do you mean X or Y?", zh:"你是指 X 还是 Y？"},
+  {cat:"澄清", en:"Could you spell that for me?", zh:"能拼一下吗？"},
+  {cat:"澄清", en:"So if I understand correctly, the deadline moves to Friday.", zh:"如果我理解没错，截止日改到周五。"},
+  {cat:"澄清", en:"Let me repeat that back to you.", zh:"我复述一遍确认。"},
+
+  {cat:"争取时间", en:"That's a good question. Let me think for a second.", zh:"好问题，我想一下。"},
+  {cat:"争取时间", en:"Let me pull that up.", zh:"我查一下。"},
+  {cat:"争取时间", en:"I don't have the numbers in front of me—can I follow up after the meeting?", zh:"数据不在手边，会后回复可以吗？"},
+  {cat:"争取时间", en:"Can I come back to you on that?", zh:"这个我稍后回复你。"},
+  {cat:"争取时间", en:"Give me a moment to find the right word.", zh:"让我想一下怎么说。"},
+
+  {cat:"提问", en:"Could you walk us through the timeline?", zh:"能过一遍时间线吗？"},
+  {cat:"提问", en:"What's the main risk you see here?", zh:"你看到的主要风险是什么？"},
+  {cat:"提问", en:"How does this affect the Q4 launch?", zh:"这对 Q4 上线有什么影响？"},
+  {cat:"提问", en:"Can you give an example?", zh:"能举个例子吗？"},
+  {cat:"提问", en:"What's your recommendation?", zh:"你的建议是什么？"},
+  {cat:"提问", en:"Who owns this action item?", zh:"这项待办谁负责？"},
+
+  {cat:"观点", en:"From my side, the priority is X.", zh:"从我这边看，重点是 X。"},
+  {cat:"观点", en:"I'd suggest we start small and iterate.", zh:"我建议先小范围做再迭代。"},
+  {cat:"观点", en:"The data points in the same direction.", zh:"数据指向同一个方向。"},
+  {cat:"观点", en:"My concern is the resourcing.", zh:"我担心的是资源。"},
+  {cat:"观点", en:"I think we can live with that.", zh:"我觉得这个可以接受。"},
+  {cat:"观点", en:"Let me put it another way.", zh:"我换个说法。"},
+  {cat:"观点", en:"To be blunt, that timeline isn't realistic.", zh:"直说，这个时间线不现实。"},
+
+  {cat:"分歧", en:"I see your point, but...", zh:"我理解你的意思，不过……"},
+  {cat:"分歧", en:"I'm not fully convinced yet—could we look at the cost?", zh:"我还没被说服，能看看成本吗？"},
+  {cat:"分歧", en:"I can live with that if we revisit it in a month.", zh:"如果一个月后复盘，我可以接受。"},
+  {cat:"分歧", en:"Let's agree to disagree and test it.", zh:"保留意见，先试。"},
+  {cat:"分歧", en:"Fair enough.", zh:"有道理。"},
+  {cat:"分歧", en:"That works for me.", zh:"我可以。"},
+
+  {cat:"同意", en:"That aligns with what we're seeing.", zh:"这和我们看到的一致。"},
+  {cat:"同意", en:"I'm on board with that.", zh:"我同意。"},
+  {cat:"同意", en:"Sounds good to me.", zh:"我觉得可以。"},
+  {cat:"同意", en:"Let's go with that.", zh:"就这么定。"},
+  {cat:"同意", en:"Just to be clear, we're not committing budget today, right?", zh:"明确一下，今天不承诺预算，对吧？"},
+
+  {cat:"收尾", en:"So the action items are...", zh:"所以待办是……"},
+  {cat:"收尾", en:"Let's set a checkpoint for next Wednesday.", zh:"下周三设个检查点。"},
+  {cat:"收尾", en:"I'll send a recap by end of day.", zh:"我今天下班前发纪要。"},
+  {cat:"收尾", en:"Anything I've missed?", zh:"我有漏掉什么吗？"},
+  {cat:"收尾", en:"Thanks, everyone. Good discussion.", zh:"谢谢大家，讨论得很好。"}
+];
+
+/* ===================== utils ===================== */
+const $ = (s, r) => (r || document).querySelector(s);
+const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+const KEY = "english-revival-v1";
+
+function iso(d){
+  return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+}
+function todayISO(){ return iso(new Date()); }
+function daysAgoISO(n){
+  const d = new Date(); d.setHours(0,0,0,0); d.setDate(d.getDate() - n); return iso(d);
+}
+function shuffle(a){
+  for(let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    const t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+
+/* ===================== state ===================== */
+let state = loadState();
+
+function loadState(){
+  try{
+    const raw = localStorage.getItem(KEY);
+    if(raw){
+      const s = JSON.parse(raw);
+      if(s && s.v === 1) return s;
+    }
+  }catch(e){}
+  return {
+    v:1,
+    start: todayISO(),
+    days:{},
+    weeks:{},
+    used:{},
+    phrases:{},
+    energy:"normal",
+    todayPlan:null
+  };
+}
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+}
+function getDay(d){ return state.days[d] || {minutes:0, items:{}}; }
+function ensureDay(d){
+  if(!state.days[d]) state.days[d] = {minutes:0, items:{}};
+  return state.days[d];
+}
+
+/* ===================== plan ===================== */
+function buildPlan(energy){
+  const spec = {
+    low: [["input",1], ["review",1]],
+    normal: [["input",1], ["output",1], ["review",1]],
+    full: [["input",2], ["output",2], ["review",1]]
+  }[energy] || [["input",1], ["output",1], ["review",1]];
+
+  const items = [];
+  spec.forEach(function(pair){
+    const type = pair[0], n = pair[1];
+    shuffle(TASKS[type].slice()).slice(0, n).forEach(function(t){
+      items.push({
+        id:t.id, type:type, mins:t.mins, title:t.title, desc:t.desc,
+        link:t.link, linkText:t.linkText
+      });
+    });
+  });
+  return {date: todayISO(), energy: energy, items: items};
+}
+
+function weekInfo(){
+  const start = new Date(state.start + "T00:00:00");
+  const now = new Date(); now.setHours(0,0,0,0);
+  const diff = Math.floor((now - start) / 86400000);
+  const n = Math.floor(diff / 7) + 1;
+  if(n < 1) return WEEKS[0];
+  if(n > 12) return null;
+  return WEEKS[n - 1];
+}
+
+/* ===================== toast ===================== */
+let toastTimer = null;
+function toast(msg){
+  const el = $("#toast");
+  el.textContent = msg;
+  el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ el.classList.remove("show"); }, 2200);
+}
+
+/* ===================== today ===================== */
+function renderToday(){
+  const plan = state.todayPlan;
+  const d = getDay(plan.date);
+  const checked = plan.items.filter(function(i){ return d.items[i.id]; }).length;
+
+  $("#todayDone").textContent = checked + " / " + plan.items.length;
+
+  const wk = weekInfo();
+  if(wk){
+    $("#heroKicker").textContent = "WEEK " + wk.n + " / 12";
+    $("#heroTitle").textContent = wk.title;
+    $("#heroSub").textContent = "本周重点：" + wk.tasks[0] + "。别想太多，照着清单做。";
+  }else{
+    $("#heroKicker").textContent = "MAINTENANCE";
+    $("#heroTitle").textContent = "12 周走完了，进入维持模式";
+    $("#heroSub").textContent = "每周 3 次、每次 30 分钟，别让它凉掉。";
+  }
+
+  $$(".seg button").forEach(function(b){
+    b.classList.toggle("on", b.dataset.energy === plan.energy);
+  });
+
+  const typeName = {input:"输入", output:"输出", review:"复盘"};
+  $("#taskList").innerHTML = plan.items.map(function(it){
+    const done = !!d.items[it.id];
+    return '<article class="task ' + it.type + (done ? " done" : "") + '">' +
+      '<input type="checkbox" data-check="' + it.id + '"' + (done ? " checked" : "") + ' aria-label="完成 ' + it.title + '">' +
+      '<div class="task-body">' +
+        '<div class="task-meta"><span class="tag ' + it.type + '">' + typeName[it.type] + '</span><span>' + it.mins + " 分钟</span></div>" +
+        "<h3>" + it.title + "</h3>" +
+        "<p>" + it.desc + "</p>" +
+        '<div class="task-links">' +
+          (it.link ? '<a href="' + it.link + '" target="_blank" rel="noopener">' + it.linkText + " ↗</a>" : "") +
+          '<button data-action="timer" data-id="' + it.id + '">⏱ 计时</button>' +
+        "</div>" +
+      "</div>" +
+    "</article>";
+  }).join("");
+}
+
+function toggleItem(id, checked){
+  const plan = state.todayPlan;
+  const item = plan.items.find(function(i){ return i.id === id; });
+  if(!item) return;
+  const d = ensureDay(plan.date);
+  if(checked){
+    if(!d.items[id]){ d.items[id] = true; d.minutes += item.mins; }
+  }else{
+    if(d.items[id]){ delete d.items[id]; d.minutes = Math.max(0, d.minutes - item.mins); }
+  }
+  save();
+  renderHUD();
+  renderToday();
+  renderStats();
+}
+
+function renderHUD(){
+  const today = getDay(todayISO());
+  $("#hudStreak").textContent = calcStreak();
+  $("#hudMin").textContent = today.minutes;
+}
+
+function calcStreak(){
+  let s = 0;
+  let cur = new Date(); cur.setHours(0,0,0,0);
+  if(getDay(iso(cur)).minutes < 5) cur.setDate(cur.getDate() - 1);
+  while(getDay(iso(cur)).minutes >= 5){
+    s++;
+    cur.setDate(cur.getDate() - 1);
+    if(s > 3650) break;
+  }
+  return s;
+}
+
+/* ===================== timer ===================== */
+let timer = {id:null, total:0, left:0, running:false, handle:null};
+
+function startTimer(id){
+  const item = state.todayPlan.items.find(function(i){ return i.id === id; });
+  if(!item) return;
+  if(timer.running && timer.id !== id){
+    if(!confirm("正在计时，要切换吗？")) return;
+  }
+  clearInterval(timer.handle);
+  timer = {id:id, total:item.mins * 60, left:item.mins * 60, running:true, handle:null};
+  $("#tName").textContent = item.title;
+  $("#tPause").textContent = "暂停";
+  $("#timerBar").classList.remove("hidden");
+  updateTimerUI();
+  timer.handle = setInterval(function(){
+    if(!timer.running) return;
+    timer.left--;
+    if(timer.left <= 0){ timer.left = 0; updateTimerUI(); finishTimer(); return; }
+    updateTimerUI();
+  }, 1000);
+}
+
+function updateTimerUI(){
+  const m = Math.floor(timer.left / 60), s = timer.left % 60;
+  $("#tTime").textContent = String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+}
+
+function finishTimer(){
+  const id = timer.id;
+  clearInterval(timer.handle);
+  timer.running = false;
+  $("#timerBar").classList.add("hidden");
+  if(id) toggleItem(id, true);
+  toast("完成一件，已自动打勾 ✓");
+}
+
+/* ===================== roadmap ===================== */
+function renderRoadmap(){
+  const doneCount = Object.keys(state.weeks).filter(function(k){ return state.weeks[k]; }).length;
+  $("#weekBar").style.width = Math.round(doneCount / 12 * 100) + "%";
+  $("#weekBarText").textContent = doneCount + " / 12 周";
+
+  $("#phases").innerHTML = PHASES.map(function(p){
+    const weeks = WEEKS.filter(function(w){ return w.phase === p.n; });
+    return '<section class="phase">' +
+      '<div class="phase-head"><span class="pi">P' + p.n + "</span><h3>" + p.name + "</h3><span>" + p.range + "</span></div>" +
+      '<div class="weeks">' + weeks.map(function(w){
+        const done = !!state.weeks[w.n];
+        return '<article class="week' + (done ? " done" : "") + '">' +
+          "<header><span class=\"wn\">W" + w.n + "</span><h4>" + w.title + "</h4>" +
+          '<input type="checkbox" data-week="' + w.n + '"' + (done ? " checked" : "") + ' aria-label="标记第 ' + w.n + ' 周完成"></header>' +
+          "<ul>" + w.tasks.map(function(t){ return "<li>" + t + "</li>"; }).join("") + "</ul>" +
+        "</article>";
+      }).join("") + "</div>" +
+    "</section>";
+  }).join("");
+}
+
+/* ===================== materials ===================== */
+let matFilter = "all";
+const MAT_CATS = ["全部", "听力", "口语", "写作", "词汇"];
+
+function renderMaterials(){
+  $("#matChips").innerHTML = MAT_CATS.map(function(c){
+    const v = c === "全部" ? "all" : c;
+    return '<button class="chip' + (matFilter === v ? " on" : "") + '" data-mat-filter="' + v + '">' + c + "</button>";
+  }).join("");
+
+  const list = MATERIALS.filter(function(m){ return matFilter === "all" || m.cat === matFilter; });
+  $("#matGrid").innerHTML = list.map(function(m){
+    const used = !!state.used[m.id];
+    return '<article class="mat' + (used ? " used" : "") + '">' +
+      '<div class="top-row"><span class="tag cat">' + m.cat + "</span><span class=\"meta\">" + m.time + "</span></div>" +
+      "<h4>" + m.title + "</h4>" +
+      "<p>" + m.why + "</p>" +
+      '<div class="actions">' +
+        (m.goto ? '<a href="#" data-goto="' + m.goto + '">' + m.linkText + " →</a>"
+                : '<a href="' + m.link + '" target="_blank" rel="noopener">' + m.linkText + " ↗</a>") +
+        '<button class="used-btn' + (used ? " on" : "") + '" data-used="' + m.id + '">' + (used ? "已用过" : "标记用过") + "</button>" +
+      "</div>" +
+    "</article>";
+  }).join("");
+}
+
+/* ===================== phrases ===================== */
+let phFilter = "all";
+const PH_CATS = ["全部", "开场", "澄清", "争取时间", "提问", "观点", "分歧", "同意", "收尾"];
+let flashIdx = null;
+
+function renderPhrases(){
+  $("#phChips").innerHTML = PH_CATS.map(function(c){
+    const v = c === "全部" ? "all" : c;
+    return '<button class="chip' + (phFilter === v ? " on" : "") + '" data-ph-filter="' + v + '">' + c + "</button>";
+  }).join("");
+
+  const rows = [];
+  PHRASES.forEach(function(p, i){
+    if(phFilter !== "all" && p.cat !== phFilter) return;
+    const ok = !!state.phrases[i];
+    rows.push('<div class="ph' + (ok ? " mastered" : "") + '">' +
+      '<span class="tag cat">' + p.cat + "</span>" +
+      '<div class="ph-main"><div class="en">' + p.en + '</div><div class="zh">' + p.zh + "</div></div>" +
+      '<div class="ph-act"><button data-copy="' + i + '">复制</button>' +
+      '<button class="ok' + (ok ? " on" : "") + '" data-mastered="' + i + '">' + (ok ? "已掌握" : "掌握") + "</button></div>" +
+    "</div>");
+  });
+  $("#phList").innerHTML = rows.join("");
+  renderFlash();
+}
+
+function nextFlash(){
+  const pool = [];
+  PHRASES.forEach(function(p, i){ if(!state.phrases[i]) pool.push(i); });
+  const src = pool.length ? pool : PHRASES.map(function(_, i){ return i; });
+  flashIdx = src[Math.floor(Math.random() * src.length)];
+  renderFlash(true);
+}
+
+function renderFlash(reset){
+  const el = $("#flash");
+  if(!el) return;
+  if(flashIdx === null){
+    el.innerHTML = '<div class="fcat">READY</div><div class="fen">抽一张，看你能不能脱口而出</div>' +
+      '<div class="fact"><button class="solid" data-flash="draw">抽一句</button></div>';
+    return;
+  }
+  const p = PHRASES[flashIdx];
+  el.innerHTML = '<div class="fcat">' + p.cat + '</div>' +
+    '<div class="fen">' + p.en + '</div>' +
+    '<div class="fzh" id="flashZh">' + (reset ? "&nbsp;" : p.zh) + '</div>' +
+    '<div class="fact">' +
+      '<button class="solid" data-flash="reveal">看中文</button>' +
+      '<button data-flash="draw">换一张</button>' +
+      '<button data-flash="master">已掌握</button>' +
+    '</div>';
+}
+
+/* ===================== stats ===================== */
+function renderStats(){
+  const dayKeys = Object.keys(state.days);
+  let totalMin = 0, totalDays = 0;
+  dayKeys.forEach(function(k){
+    totalMin += state.days[k].minutes || 0;
+    if((state.days[k].minutes || 0) >= 5) totalDays++;
+  });
+  const usedCount = Object.keys(state.used).filter(function(k){ return state.used[k]; }).length;
+  const phCount = Object.keys(state.phrases).filter(function(k){ return state.phrases[k]; }).length;
+  const wkCount = Object.keys(state.weeks).filter(function(k){ return state.weeks[k]; }).length;
+
+  $("#statGrid").innerHTML = [
+    ["<b>" + calcStreak() + "</b>", "连续天数"],
+    ["<b>" + totalMin + "</b>", "累计分钟"],
+    ["<b>" + totalDays + "</b>", "练习天数"],
+    ["<b>" + wkCount + " / 12</b>", "完成周数"],
+    ["<b>" + usedCount + " / " + MATERIALS.length + "</b>", "用过素材"],
+    ["<b>" + phCount + " / " + PHRASES.length + "</b>", "掌握句型"]
+  ].map(function(pair){ return '<div class="stat">' + pair[0] + "<span>" + pair[1] + "</span></div>"; }).join("");
+
+  $("#startDate").textContent = state.start;
+
+  const today = new Date(); today.setHours(0,0,0,0);
+  const dow = (today.getDay() + 6) % 7;
+  const start = new Date(today);
+  start.setDate(today.getDate() - dow - 49);
+  const cells = [];
+  for(let i = 0; i < 56; i++){
+    const d = new Date(start);
+    d.setDate(start.getDate() + i);
+    const key = iso(d);
+    if(d > today){
+      cells.push('<i class="future"></i>');
+      continue;
+    }
+    const m = getDay(key).minutes || 0;
+    let cls = "";
+    if(m > 0 && m < 15) cls = "l1";
+    else if(m >= 15 && m < 30) cls = "l2";
+    else if(m >= 30) cls = "l3";
+    cells.push('<i class="' + cls + '" title="' + key + " · " + m + ' 分钟"></i>');
+  }
+  $("#heat").innerHTML = cells.join("");
+
+  const weekDone = (function(){
+    let c = 0;
+    for(let i = 0; i <= dow; i++){
+      if(getDay(daysAgoISO(i)).minutes >= 5) c++;
+    }
+    return c;
+  })();
+  $("#hudStreak").title = "本周 " + weekDone + " / 7 天";
+}
+
+/* ===================== render all ===================== */
+function renderAll(){
+  renderHUD();
+  renderToday();
+  renderRoadmap();
+  renderMaterials();
+  renderPhrases();
+  renderStats();
+}
+
+/* ===================== events ===================== */
+document.addEventListener("click", function(e){
+  const tabBtn = e.target.closest("[data-tab]");
+  if(tabBtn){ switchTab(tabBtn.dataset.tab); return; }
+
+  const energyBtn = e.target.closest("[data-energy]");
+  if(energyBtn){
+    state.energy = energyBtn.dataset.energy;
+    state.todayPlan = buildPlan(state.energy);
+    save();
+    renderAll();
+    toast("已换成「" + ({low:"低电量", normal:"正常", full:"满电"}[state.energy]) + "」模式");
+    return;
+  }
+
+  const act = e.target.closest("[data-action]");
+  if(act){
+    const a = act.dataset.action;
+    if(a === "start-first"){
+      const first = state.todayPlan.items.filter(function(i){ return !getDay(todayISO()).items[i.id]; })[0];
+      if(first) startTimer(first.id);
+      else toast("清单已经清空了，今天可以收工");
+      return;
+    }
+    if(a === "shuffle"){
+      state.todayPlan = buildPlan(state.energy);
+      save(); renderAll(); toast("换了一批任务");
+      return;
+    }
+    if(a === "timer"){ startTimer(act.dataset.id); return; }
+    if(a === "minimum"){
+      const d = ensureDay(todayISO());
+      if(d.minItem){ toast("今天已经兜底过了，够了。"); return; }
+      d.minItem = true; d.minutes += 5; save(); renderAll();
+      toast("5 分钟也算数，今天没断 ✓");
+      return;
+    }
+    if(a === "reset"){
+      if(confirm("确定清空所有打卡记录？这个操作不能撤销。")){
+        localStorage.removeItem(KEY);
+        state = loadState();
+        state.todayPlan = buildPlan(state.energy);
+        save(); renderAll();
+        toast("已清空，重新开始");
+      }
+      return;
+    }
+  }
+
+  const goto = e.target.closest("[data-goto]");
+  if(goto){ e.preventDefault(); switchTab(goto.dataset.goto); return; }
+
+  const matF = e.target.closest("[data-mat-filter]");
+  if(matF){ matFilter = matF.dataset.matFilter; renderMaterials(); return; }
+
+  const usedBtn = e.target.closest("[data-used]");
+  if(usedBtn){
+    const id = usedBtn.dataset.used;
+    state.used[id] = !state.used[id];
+    save(); renderMaterials(); renderStats();
+    return;
+  }
+
+  const phF = e.target.closest("[data-ph-filter]");
+  if(phF){ phFilter = phF.dataset.phFilter; renderPhrases(); return; }
+
+  const copyBtn = e.target.closest("[data-copy]");
+  if(copyBtn){
+    const p = PHRASES[Number(copyBtn.dataset.copy)];
+    copyText(p.en);
+    return;
+  }
+
+  const masterBtn = e.target.closest("[data-mastered]");
+  if(masterBtn){
+    const i = Number(masterBtn.dataset.mastered);
+    state.phrases[i] = !state.phrases[i];
+    save(); renderPhrases(); renderStats();
+    return;
+  }
+
+  const flashBtn = e.target.closest("[data-flash]");
+  if(flashBtn){
+    const a = flashBtn.dataset.flash;
+    if(a === "draw"){ nextFlash(); return; }
+    if(a === "reveal"){
+      if(flashIdx !== null) $("#flashZh").innerHTML = PHRASES[flashIdx].zh;
+      return;
+    }
+    if(a === "master"){
+      if(flashIdx !== null){
+        state.phrases[flashIdx] = true;
+        save(); renderPhrases(); renderStats(); nextFlash();
+        toast("记下一句 ✓");
+      }
+      return;
+    }
+  }
+
+  const tbtn = e.target.closest("[data-t]");
+  if(tbtn){
+    const t = tbtn.dataset.t;
+    if(t === "pause"){
+      timer.running = !timer.running;
+      $("#tPause").textContent = timer.running ? "暂停" : "继续";
+      return;
+    }
+    if(t === "add"){ timer.left += 300; timer.total += 300; updateTimerUI(); return; }
+    if(t === "done"){ finishTimer(); return; }
+  }
+});
+
+document.addEventListener("change", function(e){
+  const cb = e.target.closest("[data-check]");
+  if(cb){ toggleItem(cb.dataset.check, cb.checked); return; }
+
+  const wk = e.target.closest("[data-week]");
+  if(wk){
+    state.weeks[wk.dataset.week] = wk.checked;
+    save(); renderRoadmap(); renderStats();
+    if(wk.checked) toast("W" + wk.dataset.week + " 完成，节奏对了");
+    return;
+  }
+});
+
+function switchTab(name){
+  $$(".panel").forEach(function(p){ p.classList.toggle("active", p.id === "panel-" + name); });
+  $$(".tab").forEach(function(b){ b.classList.toggle("active", b.dataset.tab === name); });
+  window.scrollTo({top:0, behavior:"smooth"});
+  const btn = $('.tab[data-tab="' + name + '"]');
+  if(btn) btn.scrollIntoView({inline:"center", block:"nearest"});
+}
+
+function copyText(text){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){ toast("已复制"); }, function(){ fallbackCopy(text); });
+  }else{
+    fallbackCopy(text);
+  }
+}
+function fallbackCopy(text){
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  try{ document.execCommand("copy"); toast("已复制"); }catch(e){ toast("复制失败，手动选一下吧"); }
+  document.body.removeChild(ta);
+}
+
+/* ===================== init ===================== */
+(function init(){
+  if(!state.start) state.start = todayISO();
+  if(!state.todayPlan || state.todayPlan.date !== todayISO() || !Array.isArray(state.todayPlan.items)){
+    state.todayPlan = buildPlan(state.energy || "normal");
+    save();
+  }
+  renderAll();
+})();
+</script>
+</body>
+</html>
